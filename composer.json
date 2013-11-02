@@ -1,0 +1,28 @@
+{
+    "name": "fiunchinho/affiliation",
+    "description": "Library to manage affiliation links, so you don't have to update all your links but only one configuration file",
+	"version": "0.0.1-dev",
+    "authors": [
+        {
+            "name": "Jose Manuel Armesto",
+            "email": "jose@armesto.net"
+        }
+    ],
+	"minimum-stability": "dev",
+    "autoload": {
+        "psr-0" : {
+            "Affiliation" : "src/"
+        }
+    },
+    "require": {
+    	"symfony/http-foundation": "*",
+    	"symfony/yaml": "*",
+        "willdurand/geocoder": "*"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "2.0.*@dev"
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}

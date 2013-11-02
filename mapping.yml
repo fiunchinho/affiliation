@@ -1,0 +1,8 @@
+ES:
+  product1: http://www.example.com/product1-es
+  product2: http://www.example.com/product2-es
+DE:
+  ES
+FR:
+  product1: http://www.example.com/product1-fr
+  product2: http://www.example.com/product2-fr
