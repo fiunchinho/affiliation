@@ -23,3 +23,24 @@ You just need to create a YAML file with the *mappings* between the products tha
         ES
 
 As you can see in the last entry, you could one country to *inherit* from another one. This way, the mapping for a user coming from PT (Portugal) is the same than a user coming from ES (Spain).
+
+## Usage
+You need to create a folder in the document root of your project and put this library there. The name of this folder will be the *URL_PREFIX* used in the *index.php* file.
+Once you have the folder with the files, you need to install the dependencies for the library using [Composer](http://getcomposer.org/ "Composer")
+	composer install
+Finally, you just have to tell your server that any requests coming to that folder must pass through the *index.php*. If you are using Apache, you can use this snippet inside your virtual host file
+
+	<Directory /var/www/project/products/>
+            <IfModule mod_rewrite.c>
+                RewriteEngine On
+                RewriteCond %{REQUEST_FILENAME} !-f
+                RewriteCond %{REQUEST_FILENAME} !-d
+                RewriteRule . /products/index.php [L]
+            </IfModule>
+    </Directory>
+
+Now, when writing articles about products, instead of using the real link, use your own links like ***www.domain.com/products/kindle***, and it will redirect to the real link.
+
+## Technical Stuff
+- To detect the country of the user, I'm using the [Geocoder](http://geocoder-php.org/ "Geocoder") library, that returns country codes using the ISO standard.
+- The redirections are made using the [status code 302](http://en.wikipedia.org/wiki/HTTP_302 "HTTP 302").

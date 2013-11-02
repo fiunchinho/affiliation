@@ -1,6 +1,6 @@
 {
     "name": "fiunchinho/affiliation",
-    "description": "Library to manage affiliation links, so you don't have to update all your links but only one configuration file",
+    "description": "Library to manage affiliation links. Use local affiliation shops depending on the user country. If you change affiliation partner you don't have to update all your links but only one configuration file",
 	"version": "0.0.1-dev",
     "authors": [
         {
